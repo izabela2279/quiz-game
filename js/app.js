@@ -29,7 +29,7 @@ let question, answer, response, score
 const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
-const questionEls = document.getElementById("question")
+const questionEls = document.getElementById("question-display")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -38,24 +38,27 @@ playBtn.addEventListener("click", playGame)
 
 nextBtn.addEventListener("click", nextQuestion)
 
-resetBtn.addEventListener("click", init)
+// resetBtn.addEventListener("click", playGame)
 
 /*-------------------------------- Functions --------------------------------*/
 
-function init(){
-  return quizQuestions(0);
+function render(){
+  
 }
-console.log(init);
+
+// function init(){
+//   return quizQuestions[0];
+// }
+// // console.log(init);
 
 function playGame(){
-  question = questionEls[0];
-  // console.log("start");
-  // let playGame = quizQuestions[0];
+  questionEls.textContent = quizQuestions[0].Question;
 }
 
 function nextQuestion(){
-  // console.log("next");
-  questionEls[1];
-
+  questionEls.textContent = quizQuestions[1].Question;
 }
 
+function nextQuestion(){
+  init()
+}
