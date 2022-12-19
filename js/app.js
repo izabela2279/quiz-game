@@ -1,8 +1,8 @@
 /*-------------------------------- Constants --------------------------------*/
 const quizQuestions = [
-  {Question: "Which is not a coffee bean?",
+  {Question: "Are all thse coffee beans?",
     Answers: ["Arabica", "Robusta", "Liberica", "Espresso"],
-    Answer: "Espresso"
+    Answer: "False"
   },
   {Question: "Is instant coffee made from coffee beans?",
     Answers: ["True", "False"],
@@ -20,9 +20,9 @@ const quizQuestions = [
   
 
 /*---------------------------- Variables (state) ----------------------------*/
-let question, answer, response, score
+let question, answer, response
 
-// let category
+// let category, score
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -30,7 +30,8 @@ const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
 const questionEls = document.getElementById("question-display")
-
+const trueBtn = document.getElementById("true-btn")
+const falseBtn = document.getElementById("false-btn")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -38,18 +39,13 @@ playBtn.addEventListener("click", playGame)
 
 nextBtn.addEventListener("click", nextQuestion)
 
-// resetBtn.addEventListener("click", playGame)
+resetBtn.addEventListener("click", startOver)
 
 /*-------------------------------- Functions --------------------------------*/
 
 function render(){
   
 }
-
-// function init(){
-//   return quizQuestions[0];
-// }
-// // console.log(init);
 
 function playGame(){
   questionEls.textContent = quizQuestions[0].Question;
@@ -59,6 +55,6 @@ function nextQuestion(){
   questionEls.textContent = quizQuestions[1].Question;
 }
 
-function nextQuestion(){
-  init()
+function startOver(){
+  questionEls.textContent
 }
