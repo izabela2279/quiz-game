@@ -1,7 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 const quizQuestions = [
-  {Question: "Are all thse coffee beans?",
-    Answers: ["Arabica", "Robusta", "Liberica", "Espresso"],
+  {Question: "Are Arabica, Robusta, Liberica and Espresso all coffee beans?",
+    Answers: ["True", "False"],
     Answer: "False"
   },
   {Question: "Is instant coffee made from coffee beans?",
@@ -20,9 +20,9 @@ const quizQuestions = [
   
 
 /*---------------------------- Variables (state) ----------------------------*/
-let question, answer, response
+let question, answer
 
-// let category, score
+// let category, score, response
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -41,6 +41,15 @@ nextBtn.addEventListener("click", nextQuestion)
 
 resetBtn.addEventListener("click", startOver)
 
+trueBtn.addEventListener("click", function(){
+
+})
+
+falseBtn.addEventListener("click", function(){
+
+})
+
+
 /*-------------------------------- Functions --------------------------------*/
 
 function render(){
@@ -53,6 +62,10 @@ function playGame(){
 
 function nextQuestion(){
   questionEls.textContent = quizQuestions[1].Question;
+}
+
+function response(){
+  
 }
 
 function startOver(){
