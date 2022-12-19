@@ -48,7 +48,7 @@ function init(){
 console.log(init);
 
 function playGame(){
-  return questionEls[0];
+  question = questionEls[0];
   // console.log("start");
   // let playGame = quizQuestions[0];
 }
