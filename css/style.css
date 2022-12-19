@@ -20,6 +20,21 @@ h2 {
   color: white;
 }
 
+#answer-display {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.answer {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 30px;
+  color: white;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg');
+}
+
 h3 {
   display:flex;
   align-items: center;
@@ -59,15 +74,19 @@ button {
 }
 
 #play:hover {
-  border-color: black;
   background-color: bisque;
 }
 
 #next:hover {
-  border-color: black;
   background-color: bisque;
 }
 #restart:hover {
-  border-color: black;
   background-color: bisque;
+}
+
+#true-btn:hover {
+  background-color: rgb(167, 234, 167);
+}
+#false-btn:hover {
+  background-color: rgb(225, 93, 93);
 }
