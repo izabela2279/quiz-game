@@ -2,7 +2,7 @@
 import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions, quizFourQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let questionOne, questionTwo, questionThree, questionFour, answer, score, response, answerOne
+let questionOne, questionTwo, questionThree, questionFour, answer, score, response
 
 let countdownEl = document.getElementById("countdown")
 let time = 15
@@ -164,12 +164,46 @@ let timer = setInterval(function(){
 function handleResponse(evt){
   response = evt.target.id; 
   console.log(response); 
-  answer = quizOneQuestions[0].answer;
+  answer = quizOneQuestions[questionOne].answer;
+  // answer = quizTwoQuestions[questionTwo].answer;
+  // answer = quizThreeQuestions[questionThree].answer;
+  // answer = quizFourQuestions[questionFour].answer;
   console.log(answer);
   if (answer === response){
     console.log("Correct Answer");
   } else {
     console.log("Incorrect Answer");
   }
-  
 }
+
+// function handleResponse(evt){
+//   response = evt.target.id; 
+//   if (answer = quizOneQuestions[0].answer){
+//     if (answer === response){
+//       console.log("Correct Answer");
+//     } else {
+//       console.log("Incorrect Answer");
+//     }
+//   }
+//   if (answer = quizOneQuestions[1].answer){
+//     if (answer === response){
+//       console.log("Correct Answer");
+//     } else {
+//       console.log("Incorrect Answer");
+//     }
+//   }
+//   if (answer = quizOneQuestions[2].answer){
+//     if (answer === response){
+//       console.log("Correct Answer");
+//     } else {
+//       console.log("Incorrect Answer");
+//     }
+//   }
+//   if (answer = quizOneQuestions[3].answer){
+//     if (answer === response){
+//       console.log("Correct Answer");
+//     } else {
+//       console.log("Incorrect Answer");
+//     }
+//   }
+// }
