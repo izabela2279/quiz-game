@@ -26,6 +26,11 @@ let question, answer
 
 
 /*------------------------ Cached Element References ------------------------*/
+const category1Btn = document.getElementById("c1")
+const category2Btn = document.getElementById("c2")
+const category3Btn = document.getElementById("c3")
+const category4Btn = document.getElementById("c4")
+
 const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
@@ -36,6 +41,11 @@ const falseBtn = document.getElementById("false-btn")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
+category1Btn.addEventListener("click", playGame)
+category2Btn.addEventListener("click", playGame)
+category3Btn.addEventListener("click", playGame)
+category4Btn.addEventListener("click", playGame)
+
 
 playBtn.addEventListener("click", playGame)
 
@@ -73,7 +83,8 @@ function render(){
 }
 
 function playGame(){
-  questionEls.textContent = quizQuestions[0].Question; 
+  question = 0
+  questionEls.textContent = quizQuestions[question].Question; 
   answerEls.textContent = quizQuestions[0].Answers[1]; 
   // {
   //   answer = true
@@ -86,12 +97,12 @@ function playGame(){
   }
 
 function nextQuestion(){
-  // question = []
-  quizQuestions.forEach(function(que){
-    questionEls.textContent = que;
-    console.log(que[0]);
-    // questionEls.textContent = que, idx
-  });
+  question += 1
+  questionEls.textContent = quizQuestions[question].Question; 
+  // quizQuestions.forEach(function(que){
+  //   return questionEls.textContent = que.Question;
+  //   console.log(que);
+  // });
   // questionEls.textContent = quizQuestions[1].Question;
 
    // for (let i = 1; i < quizQuestions.length; i++){
