@@ -77,7 +77,7 @@ const quizFourQuestions = [
   
 
 /*---------------------------- Variables (state) ----------------------------*/
-let question, answer, score, response
+let questionOne, questionTwo, questionThree, questionFour, answer, score, response
 
 /*------------------------ Cached Element References ------------------------*/
 const category1Btn = document.getElementById("c1")
@@ -101,9 +101,12 @@ category3Btn.addEventListener("click", playThreeGame)
 category4Btn.addEventListener("click", playFourGame)
 
 
-playBtn.addEventListener("click", playGame)
+playBtn.addEventListener("click", playOneGame)
 
-nextBtn.addEventListener("click", nextQuestion)
+nextBtn.addEventListener("click", nextOneQuestion)
+nextBtn.addEventListener("click", nextTwoQuestion)
+nextBtn.addEventListener("click", nextThreeQuestion)
+nextBtn.addEventListener("click", nextFourQuestion)
 
 resetBtn.addEventListener("click", function(){
   init()
@@ -140,8 +143,8 @@ function render(){
 }
 
 function playOneGame(){
-  question = 0
-  questionEls.textContent = quizOneQuestions[question].Question; 
+  questionOne = 0
+  questionEls.textContent = quizOneQuestions[questionOne].Question; 
   // {
   //   answer = true
   //   if (answer === quizQuestions[0].Answer){
@@ -153,8 +156,8 @@ function playOneGame(){
   }
 
 function nextOneQuestion(){
-  question += 1
-  questionEls.textContent = quizOneQuestions[question].Question; 
+  questionOne += 1
+  questionEls.textContent = quizOneQuestions[questionOne].Question; 
   // quizQuestions.forEach(function(que){
   //   return questionEls.textContent = que.Question;
   //   console.log(que);
@@ -171,30 +174,30 @@ function nextOneQuestion(){
 }
 
 function playTwoGame(){
-  question = 0
-  questionEls.textContent = quizTwoQuestions[question].Question; 
+  questionTwo = 0
+  questionEls.textContent = quizTwoQuestions[questionTwo].Question; 
   }
 function nextTwoQuestion(){
-  question += 1
-  questionEls.textContent = quizTwoQuestions[question].Question; 
+  questionTwo += 1
+  questionEls.textContent = quizTwoQuestions[questionTwo].Question; 
 }
 
 function playThreeGame(){
-  question = 0
-  questionEls.textContent = quizThreeQuestions[question].Question; 
+  questionThree = 0
+  questionEls.textContent = quizThreeQuestions[questionThree].Question; 
   }
 function nextThreeQuestion(){
-  question += 1
-  questionEls.textContent = quizThreeQuestions[question].Question; 
+  questionThree += 1
+  questionEls.textContent = quizThreeQuestions[questionThree].Question; 
 }
 
 function playFourGame(){
-  question = 0
-  questionEls.textContent = quizFourQuestions[question].Question; 
+  questionFour = 0
+  questionEls.textContent = quizFourQuestions[questionFour].Question; 
   }
 function nextFourQuestion(){
-  question += 1
-  questionEls.textContent = quizFourQuestions[question].Question; 
+  questionFour += 1
+  questionEls.textContent = quizFourQuestions[questionFour].Question; 
 }
 
 function responseTrue(){
