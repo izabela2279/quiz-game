@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-const quizQuestions = [
+const quizOneQuestions = [
   {Question: "Are Arabica, Robusta, Liberica and Espresso all coffee beans?",
     Answers: ["True", "False"],
     Answer: "False"
@@ -17,13 +17,67 @@ const quizQuestions = [
     Answer: "False"
   },
 ]
+
+const quizTwoQuestions = [
+  {Question: "French Press",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+  {Question: "All espresso machines grind beans",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+  {Question: "Pour Over",
+    Answers: ["True", "False"],
+    Answer: "True"
+  },
+  {Question: "Instant",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+]
+
+const quizThreeQuestions = [
+  {Question: "Espresso",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+  {Question: "Flat White",
+    Answers: ["True", "False"],
+    Answer: "True"
+  },
+  {Question: "Cappucino",
+    Answers: ["True", "False"],
+    Answer: "True"
+  },
+  {Question: "Latte",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+]
+
+const quizFourQuestions = [
+  {Question: "Iced Coffee",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+  {Question: "It's best to soak for 24 hours",
+    Answers: ["True", "False"],
+    Answer: "True"
+  },
+  {Question: "You use whole beans instead of ground",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+  {Question: "Can be served with milk",
+    Answers: ["True", "False"],
+    Answer: "False"
+  },
+]
   
 
 /*---------------------------- Variables (state) ----------------------------*/
-let question, answer
-
-// let category, score, response
-
+let question, answer, score, response
 
 /*------------------------ Cached Element References ------------------------*/
 const category1Btn = document.getElementById("c1")
@@ -41,17 +95,19 @@ const falseBtn = document.getElementById("false-btn")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-category1Btn.addEventListener("click", playGame)
-category2Btn.addEventListener("click", playGame)
-category3Btn.addEventListener("click", playGame)
-category4Btn.addEventListener("click", playGame)
+category1Btn.addEventListener("click", playOneGame)
+category2Btn.addEventListener("click", playTwoGame)
+category3Btn.addEventListener("click", playThreeGame)
+category4Btn.addEventListener("click", playFourGame)
 
 
 playBtn.addEventListener("click", playGame)
 
 nextBtn.addEventListener("click", nextQuestion)
 
-resetBtn.addEventListener("click", startOver)
+resetBtn.addEventListener("click", function(){
+  init()
+})
 
 // trueBtn.addEventListener("click", function(){
 //   if (response === quizQuestions.Answer)
@@ -72,7 +128,8 @@ falseBtn.addEventListener("click", responseFalse)
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
-  display = "none";
+  questionEls.textContent = none;
+  answerEls.textContent = "hide";
   render()
 }
 init()
@@ -82,10 +139,9 @@ function render(){
   nextQuestion()
 }
 
-function playGame(){
+function playOneGame(){
   question = 0
-  questionEls.textContent = quizQuestions[question].Question; 
-  answerEls.textContent = quizQuestions[0].Answers[1]; 
+  questionEls.textContent = quizOneQuestions[question].Question; 
   // {
   //   answer = true
   //   if (answer === quizQuestions[0].Answer){
@@ -96,9 +152,9 @@ function playGame(){
   // }
   }
 
-function nextQuestion(){
+function nextOneQuestion(){
   question += 1
-  questionEls.textContent = quizQuestions[question].Question; 
+  questionEls.textContent = quizOneQuestions[question].Question; 
   // quizQuestions.forEach(function(que){
   //   return questionEls.textContent = que.Question;
   //   console.log(que);
@@ -114,6 +170,32 @@ function nextQuestion(){
   // }
 }
 
+function playTwoGame(){
+  question = 0
+  questionEls.textContent = quizTwoQuestions[question].Question; 
+  }
+function nextTwoQuestion(){
+  question += 1
+  questionEls.textContent = quizTwoQuestions[question].Question; 
+}
+
+function playThreeGame(){
+  question = 0
+  questionEls.textContent = quizThreeQuestions[question].Question; 
+  }
+function nextThreeQuestion(){
+  question += 1
+  questionEls.textContent = quizThreeQuestions[question].Question; 
+}
+
+function playFourGame(){
+  question = 0
+  questionEls.textContent = quizFourQuestions[question].Question; 
+  }
+function nextFourQuestion(){
+  question += 1
+  questionEls.textContent = quizFourQuestions[question].Question; 
+}
 
 function responseTrue(){
   answer = true
@@ -133,8 +215,4 @@ function responseFalse(){
   } else {
     return "Answer is incorrect"
   }
-}
-
-function startOver(){
-  playGame();
 }
