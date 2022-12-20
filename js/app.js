@@ -1,8 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
-import {quizOneQuestions} from "../data/questions.js";
-import {quizTwoQuestions} from "../data/questions.js";
-import {quizThreeQuestions} from "../data/questions.js";
-import {quizFourQuestions} from "../data/questions.js";
+import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions,
+  quizFourQuestions} from "../data/questions.js";
+console.log(quizOneQuestions);
 
 /*---------------------------- Variables (state) ----------------------------*/
 let questionOne, questionTwo, questionThree, questionFour, answer, score, response
@@ -20,9 +19,9 @@ const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
 const questionEls = document.getElementById("question-display")
-const answerEls = document.getElementsByClassName("answer-display")
-const trueBtn = document.getElementById("true-btn")
-const falseBtn = document.getElementById("false-btn")
+const answerEls = document.getElementsByClassName("answer")
+// const trueBtn = document.getElementById("true-btn")
+// const falseBtn = document.getElementById("false-btn")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -43,27 +42,28 @@ resetBtn.addEventListener("click", function(){
   init()
 })
 
-trueBtn.addEventListener("click", function(){
-  response = true
-  if (response === quizOneQuestions[0].Answer)
-  response = true
-  console.log("Correct Answer!");
-  if (response !== quizOneQuestions[0].Answer)
-  response = false
-  console.log("Incorrect, nice try!");
-})
+answerEls.addEventListener("click", playGameOne)
 
-falseBtn.addEventListener("click", function(){
-  response = false
-  if (response === quizOneQuestions[0].Answer)
-  response = true
-  console.log("Correct Answer!");
-  if (response !== quizOneQuestions[0].Answer)
-  response = false
-  console.log("Incorrect, nice try!");
-})
+// trueBtn.addEventListener("click", function(){
+//   response = true
+//   if (response === quizOneQuestions[0].Answer)
+//   response = true
+//   console.log("Correct Answer!");
+//   if (response !== quizOneQuestions[0].Answer)
+//   response = false
+//   console.log("Incorrect, nice try!");
+// })
 
-// answerEls.addEventListener("click")
+// falseBtn.addEventListener("click", function(){
+//   response = false
+//   if (response === quizOneQuestions[0].Answer)
+//   response = true
+//   console.log("Correct Answer!");
+//   if (response !== quizOneQuestions[0].Answer)
+//   response = false
+//   console.log("Incorrect, nice try!");
+// })
+
 
 trueBtn.addEventListener("click", responseTrue)
 
@@ -90,11 +90,16 @@ function render(){
 function playGameOne(){
   questionOne = 0
   questionEls.textContent = quizOneQuestions[questionOne].Question; 
-  }
+  // answer = 0
+  // answerEls.textContent = quizOneQuestions[answer].Answer;
+  // console.log(answer);
+  // }
+}
 
 function nextOneQuestion(){
   questionOne += 1
   questionEls.textContent = quizOneQuestions[questionOne].Question; 
+
 }
 
 function playGameTwo(){

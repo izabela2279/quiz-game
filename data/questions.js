@@ -1,88 +1,82 @@
 const quizOneQuestions = [
-  {Question: "Are Arabica, Robusta, Liberica and Espresso all coffee beans?",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "Are Arabica, Robusta, Liberica and Espresso all coffee beans?",
+    answers: ["True", "False"],
+    answer: "False"
   },
-  {Question: "Is instant coffee made from coffee beans?",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "Is instant coffee made from coffee beans?",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "Arabica beans are the most popular beans.",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "Arabica beans are the most popular beans.",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "Not all coffee beans contain caffeine.",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "Not all coffee beans contain caffeine.",
+    answers: ["True", "False"],
+    answer: "False"
   },
 ]
 
 const quizTwoQuestions = [
-  {Question: "A French Press requires ground beans",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "A French Press requires ground beans",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "All espresso machines grind beans",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "All espresso machines grind beans",
+    answers: ["True", "False"],
+    answer: "False"
   },
-  {Question: "Pour Over uses a filter",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "Pour Over uses a filter",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "Cold Brew is not a brewing method",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "Cold Brew is not a brewing method",
+    answers: ["True", "False"],
+    answer: "False"
   },
 ]
 
 const quizThreeQuestions = [
-  {Question: "Espresso can be served hot or cold",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "Espresso can be served hot or cold",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "Flat White has microfoam milk",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "Flat White has microfoam milk",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "Cappucino originated in the US",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "Cappucino originated in the US",
+    answers: ["True", "False"],
+    answer: "False"
   },
-  {Question: "A Latte has steamed milk",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "A Latte has steamed milk",
+    answers: ["True", "False"],
+    answer: "True"
   },
 ]
 
 const quizFourQuestions = [
-  {Question: "Iced Coffee is made using espresso",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "Iced Coffee is made using espresso",
+    answers: ["True", "False"],
+    answer: "False"
   },
-  {Question: "It's best to soak ground beans for 24 hours",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "It's best to soak ground beans for 24 hours",
+    answers: ["True", "False"],
+    answer: "True"
   },
-  {Question: "Require whole beans instead of ground beans",
-    Answers: ["True", "False"],
-    Answer: "False"
+  {question: "Require whole beans instead of ground beans",
+    answers: ["True", "False"],
+    answer: "False"
   },
-  {Question: "Iced coffee can be served with milk",
-    Answers: ["True", "False"],
-    Answer: "True"
+  {question: "Iced coffee can be served with milk",
+    answers: ["True", "False"],
+    answer: "True"
   },
 ]
 
 export {
   quizOneQuestions,
-}
-export {
   quizTwoQuestions,
-}
-export {
   quizThreeQuestions,
-}
-export {
-  quizFourQuestions,
+  quizFourQuestions
 }
