@@ -19,59 +19,59 @@ const quizOneQuestions = [
 ]
 
 const quizTwoQuestions = [
-  {Question: "French Press",
+  {Question: "A French Press requires ground beans",
     Answers: ["True", "False"],
-    Answer: "False"
+    Answer: "True"
   },
   {Question: "All espresso machines grind beans",
     Answers: ["True", "False"],
     Answer: "False"
   },
-  {Question: "Pour Over",
+  {Question: "Pour Over uses a filter",
     Answers: ["True", "False"],
     Answer: "True"
   },
-  {Question: "Instant",
+  {Question: "Cold Brew is not a brewing method",
     Answers: ["True", "False"],
     Answer: "False"
   },
 ]
 
 const quizThreeQuestions = [
-  {Question: "Espresso",
-    Answers: ["True", "False"],
-    Answer: "False"
-  },
-  {Question: "Flat White",
+  {Question: "Espresso can be served hot or cold",
     Answers: ["True", "False"],
     Answer: "True"
   },
-  {Question: "Cappucino",
+  {Question: "Flat White has microfoam milk",
     Answers: ["True", "False"],
     Answer: "True"
   },
-  {Question: "Latte",
+  {Question: "Cappucino originated in the US",
     Answers: ["True", "False"],
     Answer: "False"
+  },
+  {Question: "A Latte has steamed milk",
+    Answers: ["True", "False"],
+    Answer: "True"
   },
 ]
 
 const quizFourQuestions = [
-  {Question: "Iced Coffee",
+  {Question: "Iced Coffee is made using espresso",
     Answers: ["True", "False"],
     Answer: "False"
   },
-  {Question: "It's best to soak for 24 hours",
+  {Question: "It's best to soak ground beans for 24 hours",
     Answers: ["True", "False"],
     Answer: "True"
   },
-  {Question: "You use whole beans instead of ground",
+  {Question: "Require whole beans instead of ground beans",
     Answers: ["True", "False"],
     Answer: "False"
   },
-  {Question: "Can be served with milk",
+  {Question: "Iced coffee can be served with milk",
     Answers: ["True", "False"],
-    Answer: "False"
+    Answer: "True"
   },
 ]
   
@@ -95,13 +95,13 @@ const falseBtn = document.getElementById("false-btn")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-category1Btn.addEventListener("click", playOneGame)
-category2Btn.addEventListener("click", playTwoGame)
-category3Btn.addEventListener("click", playThreeGame)
-category4Btn.addEventListener("click", playFourGame)
+category1Btn.addEventListener("click", playGameOne)
+category2Btn.addEventListener("click", playGameTwo)
+category3Btn.addEventListener("click", playGameThree)
+category4Btn.addEventListener("click", playGameFour)
 
 
-playBtn.addEventListener("click", playOneGame)
+playBtn.addEventListener("click", playGameOne)
 
 nextBtn.addEventListener("click", nextOneQuestion)
 nextBtn.addEventListener("click", nextTwoQuestion)
@@ -112,15 +112,25 @@ resetBtn.addEventListener("click", function(){
   init()
 })
 
-// trueBtn.addEventListener("click", function(){
-//   if (response === quizQuestions.Answer)
-//   return true
-// })
+trueBtn.addEventListener("click", function(){
+  response = true
+  if (response === quizOneQuestions[0].Answer)
+  response = true
+  console.log("Correct Answer!");
+  if (response !== quizOneQuestions[0].Answer)
+  response = false
+  console.log("Incorrect, nice try!");
+})
 
-// falseBtn.addEventListener("click", function(){
-//   if (response === quizQuestions.Answer)
-//   return true
-// })
+falseBtn.addEventListener("click", function(){
+  response = false
+  if (response === quizOneQuestions[0].Answer)
+  response = true
+  console.log("Correct Answer!");
+  if (response !== quizOneQuestions[0].Answer)
+  response = false
+  console.log("Incorrect, nice try!");
+})
 
 // answerEls.addEventListener("click")
 
@@ -131,58 +141,42 @@ falseBtn.addEventListener("click", responseFalse)
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
-  questionEls.textContent = none;
-  answerEls.textContent = "hide";
-  render()
+  questionEls.textContent = "Chose a category";
 }
 init()
 
 function render(){
-  playGame()
-  nextQuestion()
+  playGameOne()
+  playGameTwo()
+  playGameThree()
+  playGameFour()
+  nextOneQuestion()
+  nextTwoQuestion()
+  nextThreeQuestion()
+  nextFourQuestion()
 }
 
-function playOneGame(){
+function playGameOne(){
   questionOne = 0
   questionEls.textContent = quizOneQuestions[questionOne].Question; 
-  // {
-  //   answer = true
-  //   if (answer === quizQuestions[0].Answer){
-  //     return ("Correct Answer");
-  //   } else {
-  //     return ("Incorrect Answer");
-  //   }
-  // }
   }
 
 function nextOneQuestion(){
   questionOne += 1
   questionEls.textContent = quizOneQuestions[questionOne].Question; 
-  // quizQuestions.forEach(function(que){
-  //   return questionEls.textContent = que.Question;
-  //   console.log(que);
-  // });
-  // questionEls.textContent = quizQuestions[1].Question;
-
-   // for (let i = 1; i < quizQuestions.length; i++){
-  //   if (answer === Question[i].Answer[i]){
-  //     return ("Correct Answer");
-  //   } else {
-  //     return ("Incorrect Answer");
-  //   }
-  // }
 }
 
-function playTwoGame(){
+function playGameTwo(){
   questionTwo = 0
-  questionEls.textContent = quizTwoQuestions[questionTwo].Question; 
+  questionEls.textContent = quizTwoQuestions[questionTwo].
+  Question; 
   }
 function nextTwoQuestion(){
   questionTwo += 1
   questionEls.textContent = quizTwoQuestions[questionTwo].Question; 
 }
 
-function playThreeGame(){
+function playGameThree(){
   questionThree = 0
   questionEls.textContent = quizThreeQuestions[questionThree].Question; 
   }
@@ -191,7 +185,7 @@ function nextThreeQuestion(){
   questionEls.textContent = quizThreeQuestions[questionThree].Question; 
 }
 
-function playFourGame(){
+function playGameFour(){
   questionFour = 0
   questionEls.textContent = quizFourQuestions[questionFour].Question; 
   }
@@ -200,22 +194,22 @@ function nextFourQuestion(){
   questionEls.textContent = quizFourQuestions[questionFour].Question; 
 }
 
-function responseTrue(){
-  answer = true
-  if (answer === quizQuestions.Answer){
-    return "Answer is correct"
-  } else {
-    return "Answer is incorrect"
-  }
-}
+// function responseTrue(){
+//   answer = true
+//   if (answer === quizQuestions.Answer){
+//     return "Answer is correct"
+//   } else {
+//     return "Answer is incorrect"
+//   }
+// }
 
-function responseFalse(){
-  console.log("Response");
-  answer = false
-  console.log(answer);
-  if (answer === quizQuestions.Answer){
-    return "Answer is correct"
-  } else {
-    return "Answer is incorrect"
-  }
-}
+// function responseFalse(){
+//   console.log("Response");
+//   answer = false
+//   console.log(answer);
+//   if (answer === quizQuestions.Answer){
+//     return "Answer is correct"
+//   } else {
+//     return "Answer is incorrect"
+//   }
+// }
