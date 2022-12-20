@@ -2,7 +2,7 @@
 import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions, quizFourQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let questionOne, questionTwo, questionThree, questionFour, answer, score, response
+let questionOne, questionTwo, questionThree, questionFour, answer, score, response, answerOne, currentQuestions
 
 let countdownEl = document.getElementById("countdown")
 let time = 15
@@ -75,61 +75,55 @@ function init(){
 }
 init()
 
-function render(){
-  playGameOne()
-  playGameTwo()
-  playGameThree()
-  playGameFour()
-  nextOneQuestion()
-  nextTwoQuestion()
-  nextThreeQuestion()
-  nextFourQuestion()
-}
 
 function playGameOne(){
+  currentQuestions = quizOneQuestions
   questionOne = 0
-  questionEls.textContent = quizOneQuestions[questionOne].question; 
+  questionEls.textContent = currentQuestions[questionOne].question; 
 
   // answerOne = 0
-  // answerOne = quizOneQuestions[answerOne].answer;
+  // answerOne = quizOneQuestions[questionOne].answer;
   // console.log(answerOne);
 }
 
 function nextOneQuestion(){
   questionOne += 1
-  questionEls.textContent = quizOneQuestions[questionOne].question; 
+  questionEls.textContent = currentQuestions[questionOne].question; 
 
   // answerOne += 1
-  // answerOne = quizOneQuestions[answerOne].answer;
+  // answerOne = quizOneQuestions[questionOne].answer;
   // console.log(answerOne);
 }
 
 function playGameTwo(){
+  currentQuestions = quizTwoQuestions
   questionTwo = 0
-  questionEls.textContent = quizTwoQuestions[questionTwo].
+  questionEls.textContent = currentQuestions[questionTwo].
   question; 
   }
 function nextTwoQuestion(){
   questionTwo += 1
-  questionEls.textContent = quizTwoQuestions[questionTwo].question; 
+  questionEls.textContent = currentQuestions[questionTwo].question; 
 }
 
 function playGameThree(){
+  currentQuestions = quizThreeQuestions
   questionThree = 0
-  questionEls.textContent = quizThreeQuestions[questionThree].question; 
+  questionEls.textContent = currentQuestions[questionThree].question; 
   }
 function nextThreeQuestion(){
   questionThree += 1
-  questionEls.textContent = quizThreeQuestions[questionThree].question; 
+  questionEls.textContent = currentQuestions[questionThree].question; 
 }
 
 function playGameFour(){
+  currentQuestions = quizFourQuestions
   questionFour = 0
-  questionEls.textContent = quizFourQuestions[questionFour].question; 
+  questionEls.textContent = currentQuestions[questionFour].question; 
   }
 function nextFourQuestion(){
   questionFour += 1
-  questionEls.textContent = quizFourQuestions[questionFour].question; 
+  questionEls.textContent = currentQuestions[questionFour].question; 
 }
 
 let timer = setInterval(function(){
@@ -164,7 +158,7 @@ let timer = setInterval(function(){
 function handleResponse(evt){
   response = evt.target.id; 
   console.log(response); 
-  answer = quizOneQuestions[questionOne].answer;
+  answer = currentQuestions[questionOne].answer;
   // answer = quizTwoQuestions[questionTwo].answer;
   // answer = quizThreeQuestions[questionThree].answer;
   // answer = quizFourQuestions[questionFour].answer;
@@ -178,28 +172,28 @@ function handleResponse(evt){
 
 // function handleResponse(evt){
 //   response = evt.target.id; 
-//   if (answer = quizOneQuestions[0].answer){
+//   if (answer = quizOneQuestions[questionOne].answer){
 //     if (answer === response){
 //       console.log("Correct Answer");
 //     } else {
 //       console.log("Incorrect Answer");
 //     }
 //   }
-//   if (answer = quizOneQuestions[1].answer){
+//   else if (answer = quizTwoQuestions[questionTwo].answer){
 //     if (answer === response){
 //       console.log("Correct Answer");
 //     } else {
 //       console.log("Incorrect Answer");
 //     }
 //   }
-//   if (answer = quizOneQuestions[2].answer){
+//   else if (answer = quizThreeQuestions[questionThree].answer){
 //     if (answer === response){
 //       console.log("Correct Answer");
 //     } else {
 //       console.log("Incorrect Answer");
 //     }
 //   }
-//   if (answer = quizOneQuestions[3].answer){
+//   else if (answer = quizFourQuestions[questionFour].answer){
 //     if (answer === response){
 //       console.log("Correct Answer");
 //     } else {
