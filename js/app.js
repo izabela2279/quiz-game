@@ -30,7 +30,7 @@ const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
 const questionEls = document.getElementById("question-display")
-// const answerEls = document.getElementsByClassName("answer")
+const answerEls = document.getElementsByClassName("answer-display")
 const trueBtn = document.getElementById("true-btn")
 const falseBtn = document.getElementById("false-btn")
 
@@ -62,32 +62,35 @@ falseBtn.addEventListener("click", responseFalse)
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
-  questionEls
-  // question = 0;
-  // answer = 0;
+  display = "none";
   render()
 }
 init()
 
 function render(){
+  playGame()
   nextQuestion()
 }
 
 function playGame(){
-  questionEls.textContent = quizQuestions[0].Question; {
-    answer = true
-    if (answer === quizQuestions[0].Answer){
-      return ("Correct Answer");
-    } else {
-      return ("Incorrect Answer");
-    }
-  }
+  questionEls.textContent = quizQuestions[0].Question; 
+  answerEls.textContent = quizQuestions[0].Answers[1]; 
+  // {
+  //   answer = true
+  //   if (answer === quizQuestions[0].Answer){
+  //     return ("Correct Answer");
+  //   } else {
+  //     return ("Incorrect Answer");
+  //   }
+  // }
   }
 
 function nextQuestion(){
-  console.log(nextQuestion);
-  quizQuestions.forEach(function(que,idx){
-    questionEls[0].textContent = que
+  // question = []
+  quizQuestions.forEach(function(que){
+    questionEls.textContent = que;
+    console.log(que[0]);
+    // questionEls.textContent = que, idx
   });
   // questionEls.textContent = quizQuestions[1].Question;
 
@@ -122,5 +125,5 @@ function responseFalse(){
 }
 
 function startOver(){
-  init();
+  playGame();
 }
