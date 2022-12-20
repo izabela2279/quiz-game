@@ -1,10 +1,8 @@
 /*-------------------------------- Constants --------------------------------*/
-import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions,
-  quizFourQuestions} from "../data/questions.js";
-console.log(quizOneQuestions);
+import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions, quizFourQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let questionOne, questionTwo, questionThree, questionFour, answer, score, response
+let questionOne, questionTwo, questionThree, questionFour, answer, score, response, answerOne
 
 let countdownEl = document.getElementById("countdown")
 let time = 15
@@ -19,9 +17,10 @@ const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
 const questionEls = document.getElementById("question-display")
-const answerEls = document.getElementsByClassName("answer")
-// const trueBtn = document.getElementById("true-btn")
-// const falseBtn = document.getElementById("false-btn")
+const trueBtn = document.getElementById("true")
+const falseBtn = document.getElementById("false")
+
+// const answerEls = document.getElementsByClassName("answer")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -42,7 +41,7 @@ resetBtn.addEventListener("click", function(){
   init()
 })
 
-answerEls.addEventListener("click", playGameOne)
+//answerEls.addEventListener("click", playGameOne)
 
 // trueBtn.addEventListener("click", function(){
 //   response = true
@@ -65,14 +64,14 @@ answerEls.addEventListener("click", playGameOne)
 // })
 
 
-trueBtn.addEventListener("click", responseTrue)
+trueBtn.addEventListener("click", handleResponse)
 
-falseBtn.addEventListener("click", responseFalse)
+falseBtn.addEventListener("click", handleResponse)
 
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
-  questionEls.textContent = "Chose a category";
+  questionEls.textContent = "Choose a category";
 }
 init()
 
@@ -89,49 +88,52 @@ function render(){
 
 function playGameOne(){
   questionOne = 0
-  questionEls.textContent = quizOneQuestions[questionOne].Question; 
-  // answer = 0
-  // answerEls.textContent = quizOneQuestions[answer].Answer;
-  // console.log(answer);
-  // }
+  questionEls.textContent = quizOneQuestions[questionOne].question; 
+
+  // answerOne = 0
+  // answerOne = quizOneQuestions[answerOne].answer;
+  // console.log(answerOne);
 }
 
 function nextOneQuestion(){
   questionOne += 1
-  questionEls.textContent = quizOneQuestions[questionOne].Question; 
+  questionEls.textContent = quizOneQuestions[questionOne].question; 
 
+  // answerOne += 1
+  // answerOne = quizOneQuestions[answerOne].answer;
+  // console.log(answerOne);
 }
 
 function playGameTwo(){
   questionTwo = 0
   questionEls.textContent = quizTwoQuestions[questionTwo].
-  Question; 
+  question; 
   }
 function nextTwoQuestion(){
   questionTwo += 1
-  questionEls.textContent = quizTwoQuestions[questionTwo].Question; 
+  questionEls.textContent = quizTwoQuestions[questionTwo].question; 
 }
 
 function playGameThree(){
   questionThree = 0
-  questionEls.textContent = quizThreeQuestions[questionThree].Question; 
+  questionEls.textContent = quizThreeQuestions[questionThree].question; 
   }
 function nextThreeQuestion(){
   questionThree += 1
-  questionEls.textContent = quizThreeQuestions[questionThree].Question; 
+  questionEls.textContent = quizThreeQuestions[questionThree].question; 
 }
 
 function playGameFour(){
   questionFour = 0
-  questionEls.textContent = quizFourQuestions[questionFour].Question; 
+  questionEls.textContent = quizFourQuestions[questionFour].question; 
   }
 function nextFourQuestion(){
   questionFour += 1
-  questionEls.textContent = quizFourQuestions[questionFour].Question; 
+  questionEls.textContent = quizFourQuestions[questionFour].question; 
 }
 
 let timer = setInterval(function(){
-  countdownEl.textContent = time + ` seconds remaing!`
+  countdownEl.textContent = time + ` seconds remaining!`
   time -+ 1
   if (time === -1){
     countdownEl.textContent = `Time's Up`
@@ -158,3 +160,16 @@ let timer = setInterval(function(){
 //     return "Answer is incorrect"
 //   }
 // }
+
+function handleResponse(evt){
+  response = evt.target.id; 
+  console.log(response); 
+  answer = quizOneQuestions[0].answer;
+  console.log(answer);
+  if (answer === response){
+    console.log("Correct Answer");
+  } else {
+    console.log("Incorrect Answer");
+  }
+  
+}
