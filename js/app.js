@@ -7,6 +7,9 @@ import {quizFourQuestions} from "../data/questions.js";
 /*---------------------------- Variables (state) ----------------------------*/
 let questionOne, questionTwo, questionThree, questionFour, answer, score, response
 
+let countdownEl = document.getElementById("countdown")
+let time = 15
+
 /*------------------------ Cached Element References ------------------------*/
 const category1Btn = document.getElementById("c1")
 const category2Btn = document.getElementById("c2")
@@ -121,6 +124,15 @@ function nextFourQuestion(){
   questionFour += 1
   questionEls.textContent = quizFourQuestions[questionFour].Question; 
 }
+
+let timer = setInterval(function(){
+  countdownEl.textContent = time + ` seconds remaing!`
+  time -+ 1
+  if (time === -1){
+    countdownEl.textContent = `Time's Up`
+    clearInterval(timer)
+  }
+},1000)
 
 // function responseTrue(){
 //   answer = true
