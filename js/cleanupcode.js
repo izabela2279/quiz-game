@@ -271,3 +271,23 @@ function handleResponse(evt){
   // currentQuestions = quizOneQuestions
   // questionOne = 0
   // questionEls.textContent = currentQuestions[question].question; 
+
+  // trueBtn.addEventListener("click", function(){
+//   response = true
+//   if (response === quizOneQuestions[0].Answer)
+//   response = true
+//   console.log("Correct Answer!");
+//   if (response !== quizOneQuestions[0].Answer)
+//   response = false
+//   console.log("Incorrect, nice try!");
+// })
+
+// falseBtn.addEventListener("click", function(){
+//   response = false
+//   if (response === quizOneQuestions[0].Answer)
+//   response = true
+//   console.log("Correct Answer!");
+//   if (response !== quizOneQuestions[0].Answer)
+//   response = false
+//   console.log("Incorrect, nice try!");
+// })

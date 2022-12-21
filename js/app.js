@@ -13,21 +13,22 @@ const category2Btn = document.getElementById("c2")
 const category3Btn = document.getElementById("c3")
 const category4Btn = document.getElementById("c4")
 
-const playBtn = document.getElementById("play")
+// const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
 const questionEls = document.getElementById("question-display")
 const trueBtn = document.getElementById("true")
 const falseBtn = document.getElementById("false")
+const displayEl = document.getElementById("message-display")
 
 // const answerEls = document.getElementsByClassName("answer")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-category1Btn.addEventListener("click", renderGame)
-category2Btn.addEventListener("click", currentCategory)
-category3Btn.addEventListener("click", currentCategory)
-category4Btn.addEventListener("click", currentCategory)
+category1Btn.addEventListener("click", renderFirstGame)
+category2Btn.addEventListener("click", renderSecondGame)
+category3Btn.addEventListener("click", renderThirdGame)
+category4Btn.addEventListener("click", renderFourthGame)
 
 
 // playBtn.addEventListener("click", playGameOne)
@@ -39,26 +40,6 @@ resetBtn.addEventListener("click", function(){
 })
 
 //answerEls.addEventListener("click", playGameOne)
-
-// trueBtn.addEventListener("click", function(){
-//   response = true
-//   if (response === quizOneQuestions[0].Answer)
-//   response = true
-//   console.log("Correct Answer!");
-//   if (response !== quizOneQuestions[0].Answer)
-//   response = false
-//   console.log("Incorrect, nice try!");
-// })
-
-// falseBtn.addEventListener("click", function(){
-//   response = false
-//   if (response === quizOneQuestions[0].Answer)
-//   response = true
-//   console.log("Correct Answer!");
-//   if (response !== quizOneQuestions[0].Answer)
-//   response = false
-//   console.log("Incorrect, nice try!");
-// })
 
 
 trueBtn.addEventListener("click", handleResponse)
@@ -78,9 +59,24 @@ function currentCategory(evt){
 }
 
 
-function renderGame(){
+function renderFirstGame(){
   currentQuestion = quizQuestions
   question = 0
+  questionEls.textContent = currentQuestion[question].question;
+}
+function renderSecondGame(){
+  currentQuestion = quizQuestions
+  question = 4
+  questionEls.textContent = currentQuestion[question].question;
+}
+function renderThirdGame(){
+  currentQuestion = quizQuestions
+  question = 8
+  questionEls.textContent = currentQuestion[question].question;
+}
+function renderFourthGame(){
+  currentQuestion = quizQuestions
+  question = 12
   questionEls.textContent = currentQuestion[question].question;
 }
 
@@ -92,11 +88,13 @@ function nextQuestion(){
 function handleResponse(evt){
   response = evt.target.id; 
   console.log(response); 
-  answer = quizQuestions[currentQuestion].answer;
+  answer = currentQuestion[question].answer;
   console.log(answer);
   if (answer === response){
-    console.log("Correct Answer");
+    displayEl.textContent = "Correct Answer"
+    console.log("Correct, great job!");
   } else {
+    displayEl.textContent = "Incorrect, nice try!"
     console.log("Incorrect Answer");
   }
 }

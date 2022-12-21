@@ -113,3 +113,14 @@ button {
 #false-btn:hover {
   background-color: rgb(225, 93, 93);
 }
+
+
+#countdown,
+#score {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
