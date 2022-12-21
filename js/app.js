@@ -24,10 +24,14 @@ const falseBtn = document.getElementById("false")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-category1Btn.addEventListener("click", playGameOne)
-category2Btn.addEventListener("click", playGameTwo)
-category3Btn.addEventListener("click", playGameThree)
-category4Btn.addEventListener("click", playGameFour)
+// category1Btn.addEventListener("click", playGameOne)
+// category2Btn.addEventListener("click", playGameTwo)
+// category3Btn.addEventListener("click", playGameThree)
+// category4Btn.addEventListener("click", playGameFour)
+category1Btn.addEventListener("click", currentCategory)
+category2Btn.addEventListener("click", currentCategory)
+category3Btn.addEventListener("click", currentCategory)
+category4Btn.addEventListener("click", currentCategory)
 
 
 playBtn.addEventListener("click", playGameOne)
@@ -74,6 +78,24 @@ function init(){
   questionEls.textContent = "Choose a category";
 }
 init()
+
+function currentCategory(evt){
+  currentCategory = evt.target.id; 
+  console.log(currentCategory);
+}
+
+// function currentQuestion(evt){
+//   currentQuestion = evt.target.id; 
+//   console.log(currentQuestion);
+//   currentQuestions = quizOneQuestions
+//   questionOne = 0
+//   questionEls.textContent = currentQuestions[questionOne].question; 
+// }
+
+// function nextQuestion(){
+//   questionOne += 1
+//   questionEls.textContent = currentQuestions[questionOne].question; 
+// }
 
 
 function playGameOne(){
@@ -159,9 +181,9 @@ function handleResponse(evt){
   response = evt.target.id; 
   console.log(response); 
   answer = currentQuestions[questionOne].answer;
-  // answer = quizTwoQuestions[questionTwo].answer;
-  // answer = quizThreeQuestions[questionThree].answer;
-  // answer = quizFourQuestions[questionFour].answer;
+  // answer = currentQuestions[questionTwo].answer;
+  // answer = currentQuestions[questionThree].answer;
+  // answer = currentQuestions[questionFour].answer;
   console.log(answer);
   if (answer === response){
     console.log("Correct Answer");
