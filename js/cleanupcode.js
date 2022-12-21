@@ -117,13 +117,18 @@
 import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions, quizFourQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let questionOne, questionTwo, questionThree, questionFour,
+let questionOne, questionTwo, questionThree, questionFour, answerOnelo
 
 /*----------------------------- Event Listeners -----------------------------*/
 // category1Btn.addEventListener("click", playGameOne)
 // category2Btn.addEventListener("click", playGameTwo)
 // category3Btn.addEventListener("click", playGameThree)
 // category4Btn.addEventListener("click", playGameFour)
+
+nextBtn.addEventListener("click", nextOneQuestion)
+nextBtn.addEventListener("click", nextTwoQuestion)
+nextBtn.addEventListener("click", nextThreeQuestion)
+nextBtn.addEventListener("click", nextFourQuestion)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -209,3 +214,60 @@ function nextFourQuestion(){
 //     }
 //   }
 // }
+
+function handleResponse(evt){
+  response = evt.target.id; 
+  console.log(response); 
+  answer = currentQuestions[questionOne].answer;
+  // answer = currentQuestions[questionTwo].answer;
+  // answer = currentQuestions[questionThree].answer;
+  // answer = currentQuestions[questionFour].answer;
+  console.log(answer);
+  if (answer === response){
+    console.log("Correct Answer");
+  } else {
+    console.log("Incorrect Answer");
+  }
+}
+
+// function responseTrue(){
+//   answer = true
+//   if (answer === quizQuestions.Answer){
+//     return "Answer is correct"
+//   } else {
+//     return "Answer is incorrect"
+//   }
+// }
+
+// function responseFalse(){
+//   console.log("Response");
+//   answer = false
+//   console.log(answer);
+//   if (answer === quizQuestions.Answer){
+//     return "Answer is correct"
+//   } else {
+//     return "Answer is incorrect"
+//   }
+// }
+
+// if (currentCategory === "c1"){
+  //   currentQuestion = quizQuestions[0].question
+  //   console.log(currentQuestion)
+  //   questionEls.textContent = currentQuestion
+  //   console.log(currentQuestion)
+  // } else if (currentCategory === "c2") {
+  //   currentQuestion = quizQuestions[4].question
+  //   questionEls.textContent = currentQuestion
+  // } else if (currentCategory === "c3") {
+  //   currentQuestion = quizQuestions[8].question
+  //   questionEls.textContent = currentQuestion
+  // } else if (currentCategory === "c4"){
+  //   currentQuestion = quizQuestions[12].question
+  //   questionEls.textContent = currentQuestion
+  // }
+    
+  
+  // currentQuestion = 0
+  // currentQuestions = quizOneQuestions
+  // questionOne = 0
+  // questionEls.textContent = currentQuestions[question].question; 
