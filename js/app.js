@@ -7,6 +7,8 @@ let answer, score, response, currentQuestion, question, nextQ
 let countdownEl = document.getElementById("countdown")
 let timeLeft = 15
 
+let clickCount = 0
+
 /*------------------------ Cached Element References ------------------------*/
 const category1Btn = document.getElementById("c1")
 const category2Btn = document.getElementById("c2")
@@ -33,7 +35,13 @@ category4Btn.addEventListener("click", renderFourthGame)
 
 // playBtn.addEventListener("click", playGameOne)
 
-nextBtn.addEventListener("click", nextQuestion)
+nextBtn.addEventListener("click", nextQuestion, clearInterval)
+
+nextBtn.addEventListener("click", function(){
+  clickCount +=1
+  if(clickCount >= 3)
+  nextBtn.disabled = true;
+})
 
 resetBtn.addEventListener("click", function(){
   init()
@@ -86,7 +94,7 @@ function renderFourthGame(){
 
 function nextQuestion(){
   displayEl.textContent = "You have 15 seconds to answer the question"
-  question += 1
+  question += 1 <= 4
   questionEls.textContent = currentQuestion[question].question; 
 }
 
@@ -113,3 +121,5 @@ let timer = setInterval(function(){
     clearInterval(timer)
   }
 }, 1000)
+
+
