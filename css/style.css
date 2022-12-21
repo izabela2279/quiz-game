@@ -43,6 +43,12 @@ h2 {
   color: white;
 }
 
+#question-display {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #answer-display {
   display:flex;
   align-items: center;

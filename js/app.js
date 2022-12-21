@@ -60,27 +60,32 @@ function currentCategory(evt){
 
 
 function renderFirstGame(){
+  displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 0
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderSecondGame(){
+  displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 4
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderThirdGame(){
+  displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 8
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderFourthGame(){
+  displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 12
   questionEls.textContent = currentQuestion[question].question;
 }
 
 function nextQuestion(){
+  displayEl.textContent = "You have 15 seconds to answer the question"
   question += 1
   questionEls.textContent = currentQuestion[question].question; 
 }
@@ -91,8 +96,8 @@ function handleResponse(evt){
   answer = currentQuestion[question].answer;
   console.log(answer);
   if (answer === response){
-    displayEl.textContent = "Correct Answer"
-    console.log("Correct, great job!");
+    displayEl.textContent = "Correct, great job!"
+    console.log("Correct");
   } else {
     displayEl.textContent = "Incorrect, nice try!"
     console.log("Incorrect Answer");
