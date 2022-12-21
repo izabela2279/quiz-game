@@ -1,8 +1,8 @@
 /*-------------------------------- Constants --------------------------------*/
-import {quizOneQuestions, quizTwoQuestions, quizThreeQuestions, quizFourQuestions} from "../data/questions.js";
+import {quizQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let questionOne, questionTwo, questionThree, questionFour, answer, score, response, answerOne, currentQuestions
+let answer, score, response, answerOne, currentQuestions
 
 let countdownEl = document.getElementById("countdown")
 let time = 15
@@ -24,10 +24,6 @@ const falseBtn = document.getElementById("false")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-// category1Btn.addEventListener("click", playGameOne)
-// category2Btn.addEventListener("click", playGameTwo)
-// category3Btn.addEventListener("click", playGameThree)
-// category4Btn.addEventListener("click", playGameFour)
 category1Btn.addEventListener("click", currentCategory)
 category2Btn.addEventListener("click", currentCategory)
 category3Btn.addEventListener("click", currentCategory)
@@ -82,6 +78,10 @@ init()
 function currentCategory(evt){
   currentCategory = evt.target.id; 
   console.log(currentCategory);
+  // if (currentCategory === "c1"){
+  //   return quizOneQuestions
+  // }
+  // console.log(quizOneQuestions);
 }
 
 function currentQuestion(question){
@@ -92,60 +92,9 @@ function currentQuestion(question){
   questionEls.textContent = currentQuestions[question].question; 
 }
 
-// function nextQuestion(){
-//   questionOne += 1
-//   questionEls.textContent = currentQuestions[questionOne].question; 
-// }
-
-
-function playGameOne(){
-  currentQuestions = quizOneQuestions
-  questionOne = 0
-  questionEls.textContent = currentQuestions[questionOne].question; 
-
-  // answerOne = 0
-  // answerOne = quizOneQuestions[questionOne].answer;
-  // console.log(answerOne);
-}
-
-function nextOneQuestion(){
+function nextQuestion(){
   questionOne += 1
   questionEls.textContent = currentQuestions[questionOne].question; 
-
-  // answerOne += 1
-  // answerOne = quizOneQuestions[questionOne].answer;
-  // console.log(answerOne);
-}
-
-function playGameTwo(){
-  currentQuestions = quizTwoQuestions
-  questionTwo = 0
-  questionEls.textContent = currentQuestions[questionTwo].
-  question; 
-  }
-function nextTwoQuestion(){
-  questionTwo += 1
-  questionEls.textContent = currentQuestions[questionTwo].question; 
-}
-
-function playGameThree(){
-  currentQuestions = quizThreeQuestions
-  questionThree = 0
-  questionEls.textContent = currentQuestions[questionThree].question; 
-  }
-function nextThreeQuestion(){
-  questionThree += 1
-  questionEls.textContent = currentQuestions[questionThree].question; 
-}
-
-function playGameFour(){
-  currentQuestions = quizFourQuestions
-  questionFour = 0
-  questionEls.textContent = currentQuestions[questionFour].question; 
-  }
-function nextFourQuestion(){
-  questionFour += 1
-  questionEls.textContent = currentQuestions[questionFour].question; 
 }
 
 let timer = setInterval(function(){
@@ -192,34 +141,3 @@ function handleResponse(evt){
   }
 }
 
-// function handleResponse(evt){
-//   response = evt.target.id; 
-//   if (answer = quizOneQuestions[questionOne].answer){
-//     if (answer === response){
-//       console.log("Correct Answer");
-//     } else {
-//       console.log("Incorrect Answer");
-//     }
-//   }
-//   else if (answer = quizTwoQuestions[questionTwo].answer){
-//     if (answer === response){
-//       console.log("Correct Answer");
-//     } else {
-//       console.log("Incorrect Answer");
-//     }
-//   }
-//   else if (answer = quizThreeQuestions[questionThree].answer){
-//     if (answer === response){
-//       console.log("Correct Answer");
-//     } else {
-//       console.log("Incorrect Answer");
-//     }
-//   }
-//   else if (answer = quizFourQuestions[questionFour].answer){
-//     if (answer === response){
-//       console.log("Correct Answer");
-//     } else {
-//       console.log("Incorrect Answer");
-//     }
-//   }
-// }

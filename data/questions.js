@@ -1,4 +1,4 @@
-const quizOneQuestions = [
+const quizQuestions = [
   {
     category: "c1",
     question: "Are Arabica, Robusta, Liberica and Espresso all coffee beans?",
@@ -23,9 +23,6 @@ const quizOneQuestions = [
     answers: ["true", "false"],
     answer: "false"
   },
-]
-
-const quizTwoQuestions = [
   {
     category: "c2",
     question: "A French Press requires ground beans",
@@ -50,9 +47,6 @@ const quizTwoQuestions = [
     answers: ["true", "false"],
     answer: "false"
   },
-]
-
-const quizThreeQuestions = [
   {
     category: "c3",
     question: "Espresso can be served hot or cold",
@@ -77,9 +71,6 @@ const quizThreeQuestions = [
     answers: ["true", "false"],
     answer: "true"
   },
-]
-
-const quizFourQuestions = [
   {
     category: "c4",
     question: "Iced Coffee is made using espresso",
@@ -107,8 +98,8 @@ const quizFourQuestions = [
 ]
 
 export {
-  quizOneQuestions,
-  quizTwoQuestions,
-  quizThreeQuestions,
-  quizFourQuestions
+  quizQuestions
 }
+
+
+
