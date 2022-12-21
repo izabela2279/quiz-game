@@ -3,7 +3,7 @@ import {quizQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
 let answer, score, response, currentQuestion, question
-let timeLeft = 15
+let timeLeft = 30
 let clickCount = 0
 
 /*------------------------ Cached Element References ------------------------*/
@@ -80,37 +80,35 @@ function currentCategory(evt){
 
 function renderFirstGame(){
   startTimer()
-  displayEl.textContent = "You have 15 seconds to answer the question"
+  displayEl.textContent = "You have 30 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 0
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderSecondGame(){
   startTimer()
-  displayEl.textContent = "You have 15 seconds to answer the question"
+  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
   currentQuestion = quizQuestions
   question = 4
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderThirdGame(){
   startTimer()
-  displayEl.textContent = "You have 15 seconds to answer the question"
+  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
   currentQuestion = quizQuestions
   question = 8
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderFourthGame(){
   startTimer()
-  displayEl.textContent = "You have 15 seconds to answer the question"
+  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
   currentQuestion = quizQuestions
   question = 12
   questionEls.textContent = currentQuestion[question].question;
 }
 
 function nextQuestion(){
-  timeLeft = 15
-  startTimer()
-  displayEl.textContent = "You have 15 seconds to answer the question"
+  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
   question += 1 <= 4
   questionEls.textContent = currentQuestion[question].question; 
 }
