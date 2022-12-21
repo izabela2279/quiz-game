@@ -2,14 +2,12 @@
 import {quizQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let answer, score, response, currentQuestion, question, nextQ
-
-let countdownEl = document.getElementById("countdown")
+let answer, score, response, currentQuestion, question
 let timeLeft = 15
-
 let clickCount = 0
 
 /*------------------------ Cached Element References ------------------------*/
+const countdownEl = document.getElementById("countdown")
 const category1Btn = document.getElementById("c1")
 const category2Btn = document.getElementById("c2")
 const category3Btn = document.getElementById("c3")
@@ -35,7 +33,7 @@ category4Btn.addEventListener("click", renderFourthGame)
 
 // playBtn.addEventListener("click", playGameOne)
 
-nextBtn.addEventListener("click", nextQuestion, clearInterval)
+nextBtn.addEventListener("click", nextQuestion)
 
 nextBtn.addEventListener("click", function(){
   clickCount +=1
@@ -56,6 +54,19 @@ falseBtn.addEventListener("click", handleResponse)
 
 
 /*-------------------------------- Functions --------------------------------*/
+function startTimer(){
+  let timer = setInterval(function(){
+    console.log(setInterval);
+    countdownEl.textContent = timeLeft + ` seconds remaining!`
+    timeLeft -= 1
+    console.log(timeLeft)
+    if (timeLeft === -1) {
+      countdownEl.textContent = `Time's Up`
+      clearInterval(timer)
+    }
+  }, 1000)
+}
+
 function init(){
   location.reload()
 }
@@ -68,24 +79,28 @@ function currentCategory(evt){
 
 
 function renderFirstGame(){
+  startTimer()
   displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 0
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderSecondGame(){
+  startTimer()
   displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 4
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderThirdGame(){
+  startTimer()
   displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 8
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderFourthGame(){
+  startTimer()
   displayEl.textContent = "You have 15 seconds to answer the question"
   currentQuestion = quizQuestions
   question = 12
@@ -93,6 +108,8 @@ function renderFourthGame(){
 }
 
 function nextQuestion(){
+  timeLeft = 15
+  startTimer()
   displayEl.textContent = "You have 15 seconds to answer the question"
   question += 1 <= 4
   questionEls.textContent = currentQuestion[question].question; 
@@ -112,14 +129,8 @@ function handleResponse(evt){
   }
 }
 
-let timer = setInterval(function(){
-  countdownEl.textContent = timeLeft + ` seconds remaining!`
-  timeLeft -= 1
-  console.log(timeLeft)
-  if (timeLeft === -1) {
-    countdownEl.textContent = `Time's Up`
-    clearInterval(timer)
-  }
-}, 1000)
+function quizResults(){
+
+}
 
 
