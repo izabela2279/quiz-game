@@ -84,13 +84,13 @@ function currentCategory(evt){
   console.log(currentCategory);
 }
 
-// function currentQuestion(evt){
-//   currentQuestion = evt.target.id; 
-//   console.log(currentQuestion);
-//   currentQuestions = quizOneQuestions
-//   questionOne = 0
-//   questionEls.textContent = currentQuestions[questionOne].question; 
-// }
+function currentQuestion(question){
+  currentQuestion = 
+  console.log(currentQuestion);
+  currentQuestions = quizOneQuestions
+  questionOne = 0
+  questionEls.textContent = currentQuestions[question].question; 
+}
 
 // function nextQuestion(){
 //   questionOne += 1
