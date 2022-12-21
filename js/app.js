@@ -57,9 +57,9 @@ falseBtn.addEventListener("click", handleResponse)
 
 /*-------------------------------- Functions --------------------------------*/
 function init(){
-  questionEls.textContent = "Choose a category";
+  location.reload()
 }
-init()
+
 
 function currentCategory(evt){
   currentCategory = evt.target.id; 
