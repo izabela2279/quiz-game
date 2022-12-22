@@ -21,6 +21,9 @@ const falseBtn = document.getElementById("false")
 const displayEl = document.getElementById("message-display")
 const scoreEl = document.getElementById("score")
 const soundBeans = new Audio("../audio/beans.wav")
+const soundBrew = new Audio("../audio/machine.wav")
+const soundCoffee = new Audio("../audio/coffee.wav")
+const soundIce = new Audio("../audio/ice.mp3")
 
 
 
@@ -79,6 +82,7 @@ function renderFirstGame(){
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderSecondGame(){
+  soundBrew.play()
   startTimer()
   category1Btn.disabled = "true"
   category3Btn.disabled = "true"
@@ -89,6 +93,7 @@ function renderSecondGame(){
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderThirdGame(){
+  soundCoffee.play()
   startTimer()
   category1Btn.disabled = "true"
   category2Btn.disabled = "true"
@@ -99,6 +104,7 @@ function renderThirdGame(){
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderFourthGame(){
+  soundIce.play()
   startTimer()
   category1Btn.disabled = "true"
   category2Btn.disabled = "true"
