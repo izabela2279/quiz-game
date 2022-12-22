@@ -45,16 +45,15 @@ resetBtn.addEventListener("click", function(){
 
 trueBtn.addEventListener("click", handleResponse)
 
+
 falseBtn.addEventListener("click", handleResponse)
 
 
 /*-------------------------------- Functions --------------------------------*/
 function startTimer(){
   let timer = setInterval(function(){
-    console.log(setInterval);
     countdownEl.textContent = timeLeft + ` seconds remaining!`
     timeLeft -= 1
-    console.log(timeLeft)
     if (timeLeft === -1) {
       countdownEl.textContent = `Time's Up`
       clearInterval(timer)
@@ -68,57 +67,71 @@ function init(){
 
 function renderFirstGame(){
   startTimer()
-  displayEl.textContent = "You have 30 seconds to answer the question"
+  category2Btn.disabled = "true"
+  category3Btn.disabled = "true"
+  category4Btn.disabled = "true"
+  displayEl.textContent = "You have 30 seconds to answer all questions in given category"
   currentQuestion = quizQuestions
   question = 0
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderSecondGame(){
   startTimer()
-  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
+  category1Btn.disabled = "true"
+  category3Btn.disabled = "true"
+  category4Btn.disabled = "true"
+  displayEl.textContent = "You have 30 seconds to answer all questions in given category"
   currentQuestion = quizQuestions
   question = 4
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderThirdGame(){
   startTimer()
-  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
+  category1Btn.disabled = "true"
+  category2Btn.disabled = "true"
+  category4Btn.disabled = "true"
+  displayEl.textContent = "You have 30 seconds to answer all questions in given category"
   currentQuestion = quizQuestions
   question = 8
   questionEls.textContent = currentQuestion[question].question;
 }
 function renderFourthGame(){
   startTimer()
-  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
+  category1Btn.disabled = "true"
+  category2Btn.disabled = "true"
+  category3Btn.disabled = "true"
+  displayEl.textContent = "You have 30 seconds to answer all questions in given category"
   currentQuestion = quizQuestions
   question = 12
   questionEls.textContent = currentQuestion[question].question;
 }
 
 function nextQuestion(){
-  displayEl.textContent = "You have 30 seconds to answer all questions in this category"
+  displayEl.textContent = "☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕ ☕"
   question += 1 <= 4
   questionEls.textContent = currentQuestion[question].question; 
 }
 
 function handleResponse(evt){
   response = evt.target.id; 
-  console.log(response); 
   answer = currentQuestion[question].answer;
-  console.log(answer);
   if (answer === response){
     displayEl.textContent = "Correct, great job!"
     console.log("Correct");
-    return score ++;
+    score ++;
+    console.log(score);
   } else {
     displayEl.textContent = "Incorrect, nice try!"
     console.log("Incorrect Answer");
   }
+  trackScore()
 }
+
 
 function trackScore(){
   scoreEl.textContent = `You got ${score} out of 4 correct`
 }
-trackScore()
+
+
 
 
