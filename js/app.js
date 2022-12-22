@@ -57,6 +57,8 @@ function startTimer(){
     if (timeLeft === -1) {
       countdownEl.textContent = `Time's Up`
       clearInterval(timer)
+      trueBtn.disabled = "true"
+      falseBtn.disabled = "true"
     }
   }, 1000)
 }
@@ -76,6 +78,7 @@ function renderFirstGame(){
   question = 0
   questionEls.textContent = currentQuestion[question].question;
 }
+
 function renderSecondGame(){
   soundBrew.play()
   startTimer()

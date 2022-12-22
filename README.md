@@ -1,12 +1,12 @@
 # Espresso Quiz <a href= https://espresso-quiz.netlify.app/ >Play Game</a>
 
-Espresso Quiz Game is a true and false quiz. The user is given four categories to choose from. Once a category is selected a question is displayed, user can select "True" or "False". To move on to the next question select "Next Question". When a category is choosen a 30 second countdown timer starts to answer all questions in a given category. The score is tracked as questions are answered.
+Espresso Quiz Game is a true and false quiz. The user is given four categories to choose from. Once a category is selected a question is displayed, user can select "True" or "False". To move on to the next question select "Next Question". When a category is choosen a 30 second countdown timer starts to answer all questions in a given category. The score is tracked as questions are answered. User only wins if all questions within a given category are answered correctly.
 
 ### The game was created using:
 - Javascript 
 - HTML
 - CSS
-- Github
+- Git
 
 # <a href= https://espresso-quiz.netlify.app/ >Play Game</a>
 
