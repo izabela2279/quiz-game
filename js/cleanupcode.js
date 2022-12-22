@@ -291,3 +291,9 @@ function handleResponse(evt){
 //   response = false
 //   console.log("Incorrect, nice try!");
 // })
+
+
+function currentCategory(evt){
+  currentCategory = evt.target.id; 
+  console.log(currentCategory);
+}

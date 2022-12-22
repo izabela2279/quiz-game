@@ -2,9 +2,10 @@
 import {quizQuestions} from "../data/questions.js";
 
 /*---------------------------- Variables (state) ----------------------------*/
-let answer, score, response, currentQuestion, question
+let answer, response, currentQuestion, question
 let timeLeft = 30
 let clickCount = 0
+let score = 0
 
 /*------------------------ Cached Element References ------------------------*/
 const countdownEl = document.getElementById("countdown")
@@ -12,16 +13,13 @@ const category1Btn = document.getElementById("c1")
 const category2Btn = document.getElementById("c2")
 const category3Btn = document.getElementById("c3")
 const category4Btn = document.getElementById("c4")
-
-// const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const resetBtn = document.getElementById("restart")
 const questionEls = document.getElementById("question-display")
 const trueBtn = document.getElementById("true")
 const falseBtn = document.getElementById("false")
 const displayEl = document.getElementById("message-display")
-
-// const answerEls = document.getElementsByClassName("answer")
+const scoreEl = document.getElementById("score")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -45,9 +43,6 @@ resetBtn.addEventListener("click", function(){
   init()
 })
 
-//answerEls.addEventListener("click", playGameOne)
-
-
 trueBtn.addEventListener("click", handleResponse)
 
 falseBtn.addEventListener("click", handleResponse)
@@ -70,13 +65,6 @@ function startTimer(){
 function init(){
   location.reload()
 }
-
-
-function currentCategory(evt){
-  currentCategory = evt.target.id; 
-  console.log(currentCategory);
-}
-
 
 function renderFirstGame(){
   startTimer()
@@ -121,14 +109,16 @@ function handleResponse(evt){
   if (answer === response){
     displayEl.textContent = "Correct, great job!"
     console.log("Correct");
+    return score ++;
   } else {
     displayEl.textContent = "Incorrect, nice try!"
     console.log("Incorrect Answer");
   }
 }
 
-function quizResults(){
-
+function trackScore(){
+  scoreEl.textContent = `You got ${score} out of 4 correct`
 }
+trackScore()
 
 
