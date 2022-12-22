@@ -20,6 +20,7 @@ const trueBtn = document.getElementById("true")
 const falseBtn = document.getElementById("false")
 const displayEl = document.getElementById("message-display")
 const scoreEl = document.getElementById("score")
+
 const soundBeans = new Audio("../audio/beans.wav")
 const soundBrew = new Audio("../audio/machine.wav")
 const soundCoffee = new Audio("../audio/coffee.wav")
@@ -33,11 +34,7 @@ category2Btn.addEventListener("click", renderSecondGame)
 category3Btn.addEventListener("click", renderThirdGame)
 category4Btn.addEventListener("click", renderFourthGame)
 
-
-// playBtn.addEventListener("click", playGameOne)
-
 nextBtn.addEventListener("click", nextQuestion)
-
 nextBtn.addEventListener("click", function(){
   clickCount +=1
   if(clickCount >= 3)
@@ -49,8 +46,6 @@ resetBtn.addEventListener("click", function(){
 })
 
 trueBtn.addEventListener("click", handleResponse)
-
-
 falseBtn.addEventListener("click", handleResponse)
 
 
