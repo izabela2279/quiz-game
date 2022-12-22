@@ -87,6 +87,7 @@ function renderSecondGame(){
   question = 4
   questionEls.textContent = currentQuestion[question].question;
 }
+
 function renderThirdGame(){
   soundCoffee.play()
   startTimer()
@@ -98,6 +99,7 @@ function renderThirdGame(){
   question = 8
   questionEls.textContent = currentQuestion[question].question;
 }
+
 function renderFourthGame(){
   soundIce.play()
   startTimer()
@@ -130,7 +132,6 @@ function handleResponse(evt){
   }
   trackScore()
 }
-
 
 function trackScore(){
   scoreEl.textContent = `You got ${score} out of 4 correct`

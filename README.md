@@ -18,6 +18,7 @@ Attributions:
 * Sounds: Free Sounds
 
 Next Steps: 
-- [] Create more questions and categories.
-- [] Reformat display so only one category is displayed at a time.
-- [] Create score results to display what was scored in each   category at the very end.
+
+- [ ] Create more questions and categories.
+- [ ] Reformat display so only one category is displayed at a time.
+- [ ] Create score results to display what was scored in each   category at the very end.
