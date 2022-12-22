@@ -1,5 +1,6 @@
 html {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg');
+  font-family: 'La Belle Aurore', cursive;
 }
 
 h1 {
@@ -69,7 +70,7 @@ h3 {
   align-items: center;
   justify-content: center;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 30px;
   color: white;
 }
 
@@ -120,6 +121,11 @@ button {
   background-color: rgb(225, 93, 93);
 }
 
+p {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
 
 #countdown,
 #score {
@@ -128,5 +134,5 @@ button {
   justify-content: center;
   color: white;
   padding: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }

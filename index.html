@@ -7,7 +7,12 @@
   <script defer src="./js/app.js" type="module"></script>
   <link rel="stylesheet" href="./css/style.css">
   <title>Espresso Quiz</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg">
+  <link 
+    id="flavicon" rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg"
+  >
+  <link 
+    href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet"
+  >
 </head>
 <body>
   <h1>Espresso Quiz</h1>
@@ -24,14 +29,14 @@
         <button id="false" class="answer" type="button" hidden>False</button>
       </div>
   </section>
-  <h3 id="message-display">Choose a category to begin quiz</h3>
+  <h3 id="message-display"> ☕  Click on a category to begin quiz ☕ </h3>
   <div class="buttons">
     <button id="next">Next Question</button>
     <button id="restart">Start Over</button>
   </div>
   <p>
     <div id="countdown"></div>
-    <text id="score">Your Score:</text>
+    <text id="score"></text>
   </p>
 </body>
 </html>
