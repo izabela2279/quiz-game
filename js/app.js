@@ -123,18 +123,19 @@ function handleResponse(evt){
   answer = currentQuestion[question].answer;
   if (answer === response){
     displayEl.textContent = "Correct, great job!"
-    console.log("Correct");
     score ++;
-    console.log(score);
   } else {
     displayEl.textContent = "Incorrect, nice try!"
-    console.log("Incorrect Answer");
   }
   trackScore()
 }
 
 function trackScore(){
-  scoreEl.textContent = `You got ${score} out of 4 correct`
+  scoreEl.textContent = `You got ${score} out of 4 correct, nice try!`
+  if (score === 3)
+  scoreEl.textContent = "Almost there!"
+  if (score === 4)
+  scoreEl.textContent = "YOU WIN!"
 }
 
 
