@@ -6,4 +6,6 @@ This game was created using Javascript, HTML and CSS.
 
 <a href= https://espresso-quiz.netlify.app/ >Play Game</a>
 
+<img src="./image/display.png" >
+
 Next Steps: Create more questions and categories. Reformat display so only one category is displayed at a time. Create scoring and allow it to display what was scored in each category at the end.

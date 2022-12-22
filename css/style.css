@@ -1,6 +1,6 @@
 html {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Roasted_coffee_beans.jpg');
-  font-family: 'La Belle Aurore', cursive;
+  
 }
 
 h1 {
@@ -10,6 +10,7 @@ h1 {
   font-weight: bolder;
   font-size: 75px;
   color: white;
+  font-family: 'Pacifico', cursive;
 }
 
 nav {
@@ -33,6 +34,7 @@ section {
 .category {
   background-color: rgb(126, 126, 60);
   padding: 20px;
+  font-family: 'Dancing Script', cursive;
 }
 
 h2 {
@@ -42,6 +44,7 @@ h2 {
   font-weight: bolder;
   font-size: 30px;
   color: white;
+  font-family: 'Pacifico', cursive;
 }
 
 #question-display {
@@ -72,6 +75,7 @@ h3 {
   font-weight: bolder;
   font-size: 30px;
   color: white;
+  font-family: 'Dancing Script', cursive;
 }
 
 section {
@@ -83,9 +87,9 @@ section {
 
 .category {
   border: 3px solid white;
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
-  font-size: 25px;
+  font-size: 30px;
   color: white;
 }
 
@@ -100,11 +104,9 @@ button {
   border-radius: 50%;
   padding:20px;
   margin: 15px;
-  font-weight: bold
-}
-
-#play:hover {
-  background-color: bisque;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
 }
 
 #next:hover {
@@ -114,10 +116,10 @@ button {
   background-color: bisque;
 }
 
-#true-btn:hover {
+#true:hover {
   background-color: rgb(167, 234, 167);
 }
-#false-btn:hover {
+#false:hover {
   background-color: rgb(225, 93, 93);
 }
 
@@ -134,5 +136,6 @@ p {
   justify-content: center;
   color: white;
   padding: 10px;
-  font-size: 25px;
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
 }
