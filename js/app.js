@@ -20,6 +20,8 @@ const trueBtn = document.getElementById("true")
 const falseBtn = document.getElementById("false")
 const displayEl = document.getElementById("message-display")
 const scoreEl = document.getElementById("score")
+const soundBeans = new Audio("../audio/beans.wav")
+
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -66,6 +68,7 @@ function init(){
 }
 
 function renderFirstGame(){
+  soundBeans.play()
   startTimer()
   category2Btn.disabled = "true"
   category3Btn.disabled = "true"
