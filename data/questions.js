@@ -55,7 +55,7 @@ const quizQuestions = [
   },
   {
     category: "c3",
-    question: "Flat White has microfoam milk",
+    question: "A Flat White has microfoam milk",
     answers: ["true", "false"],
     answer: "true"
   },
@@ -79,19 +79,19 @@ const quizQuestions = [
   },
   {
     category: "c4",
-    question: "It's best to soak ground beans for 24 hours",
-    answers: ["true", "false"],
-    answer: "true"
-  },
-  {
-    category: "c4",
-    question: "Require whole beans instead of ground beans",
+    question: "A cold brew requires whole beans instead of ground beans",
     answers: ["true", "false"],
     answer: "false"
   },
   {
     category: "c4",
-    question: "Iced coffee can be served with milk",
+    question: "For a Cold Brew, it's best to soak coarse ground beans for 12-24 hours",
+    answers: ["true", "false"],
+    answer: "true"
+  },
+  {
+    category: "c4",
+    question: "Iced coffee is brewed and poured over ice",
     answers: ["true", "false"],
     answer: "true"
   },
